@@ -8,7 +8,9 @@ Date, Time, Open, High, Low, Close, Volume
 
 Notes
 -----
+
 There are row "jumps", look at the time of this example:
+
     2014.05.08,12:00,434.500,435.598,434.500,434.500,5
     2014.05.08,12:03,434.500,434.500,434.500,434.500,1
 
