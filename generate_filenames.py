@@ -7,8 +7,10 @@ import sys
 This script auto-updates history filenames.
     Usage: $python generate_filenames.py [pair] [path]
         i.e python generate_filenames.py btcusd /home/kiwi/history/btcusd/
+        where the directory contains history files needs to be updated.
 
-    Note: does not handle row jumps!
+    Note: does not handle missing rows, time interval is 
+    determined by datetime delta of first and second row.
 
     - read every csv file in given directory
     - call head to extract the first and second line 
