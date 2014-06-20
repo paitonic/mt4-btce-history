@@ -84,6 +84,9 @@ def generate_filenames(pair, path):
             interval_name = ''
             if interval_in_seconds in intervals:
                 interval_name = intervals[interval_in_seconds]
+            elif interval_in_seconds < 300:
+                # try determing missing row in 1-minute interval
+                interval_name = '1M'
             else:
                 # special case
                 # it's 1-month interval
@@ -102,7 +105,7 @@ def generate_filenames(pair, path):
             os.rename(full_path, os.path.join(path,fnew_name))
             
             timenow = datetime.datetime.now()
-            print "{date}\n Renamed: {previous_filename} to {new_filename}. interval:{interval_name}".format(
+            print "{date}: Renamed: {previous_filename} to {new_filename}. interval:{interval_name}".format(
             date=timenow, 
             previous_filename=filename, 
             new_filename=fnew_name,
